@@ -1,0 +1,114 @@
+Requirements Specification:
+
+    The banking program should be able to create and manage customer accounts of various types (i.e. checking, savings). It should
+be able to manage account transactions (i.e. deposits, withdrawals) calculate and add interest, and apply penal fees to customers that
+violate soft rules (i.e. overdraft charges). Customer accounts are organized by unique ID number, and store information such as phone number, DoB
+mailing adress, and name for cataloguing, verification and billing purposes. The accounts may have to be listed out through the program in case of the need
+for an in-depth or manual search for customer accounts. The program will be operated through a CMD interface, by bank personnel or bank clients (presumably). 
+________________________________________________________________________________________
+Use Cases:
+1. Application startup. 
+2. account creation.
+3. account search (shallow, only picks up user's accounts)
+4. account search (deep, retrieves all accounts. Restricted to bank personnel)
+5. withdrawal from account
+6. deposit to account
+7. check account balance
+8. check transaction history of given account
+9. deactivate account
+10. __
+Cases expounded upon in included .docx file. 
+________________________________________________________________________________________
+UML:
+See potentially poor quality pictures included. 
+________________________________________________________________________________________
+Pseudocode:
+
+ Add_Account
+{
+	prompt user for name
+	read in name
+
+	prompt user with account type (checking/savings)
+	read in type
+
+	assign string value (checking/savings) to account.
+	
+	If (new user)
+		prompt user for address, telephone number, age
+		read in address, telephone number, age
+
+		prompt user for customer type (adult/senior/student)
+		read in type
+
+		create account with given information.
+	If (returning user)
+		display new account ID
+	else 
+		display error message
+}
+
+ make_deposit
+{
+	Retrieve account from ID number
+	If (successful)
+		add amount to account balance
+	else
+		display error message
+}		
+
+ Make_Deposit
+{
+	prompt user for account ID
+	read in account ID
+
+	prompt user for amount to deposit
+	read in amount
+
+	call make_deposit with obtained values
+}
+
+make_withdrawal
+{
+	retrieve account from ID number
+	if (successful)
+		if(amount > balance)
+			break from if statement
+		else if (amount <= balance
+			deduct amount from account balance
+			end function
+	display error message 
+	end function
+}
+
+add_account  [1]
+{
+	Look for customer under given name
+	if (customer doesn't exist)
+		return nothing
+	otherwise, add an account under this customer.
+}
+
+add_account   [2]
+{
+	create a new customer with the values name, address, telephone, age, and customer type. 
+
+	add selected account type under this new customer. 
+}
+
+get_account
+{
+	For (the size of the accounts vector)
+		if (this is the account you're looking for)
+			return this account
+
+	If no accounts match, return null.
+}
+
+________________________________________________________________________________________
+Bank Data Storage Description:
+
+Account and customer numbers will start at zero and be incremented by one each time the respective objects are created. 
+They will be stored in variables in the Bank object, and will thereby be linked to the bank that the accounts and customers are stored in.  
+Each account object will contain an assigned customer object with which it can be referenced. Transactions will be linked to customers
+through the account. More specifically, the account is modified by transactions, and is located under the customer's name.
