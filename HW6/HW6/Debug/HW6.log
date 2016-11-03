@@ -1,0 +1,6 @@
+﻿  Banking_Application.cpp
+c:\users\luke lattig\desktop\new folder (2)\repositories\cs273hw5and6\hw6\hw6\account.h(36): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\luke lattig\desktop\new folder (2)\repositories\cs273hw5and6\hw6\hw6\bank.h(37): warning C4018: '<': signed/unsigned mismatch
+c:\users\luke lattig\desktop\new folder (2)\repositories\cs273hw5and6\hw6\hw6\bank.h(53): warning C4018: '<': signed/unsigned mismatch
+  HW6.vcxproj -> C:\Users\Luke Lattig\Desktop\New folder (2)\Repositories\CS273HW5and6\HW6\Debug\HW6.exe
+  HW6.vcxproj -> C:\Users\Luke Lattig\Desktop\New folder (2)\Repositories\CS273HW5and6\HW6\Debug\HW6.pdb (Full PDB)

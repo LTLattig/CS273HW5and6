@@ -12,6 +12,39 @@ as well as its own checking and overdraft fees.
 */
 class Customer // FIXME: Complete the implementation!
 {
+private:
+	string name;
+	string address;
+	unsigned int age;
+	unsigned int teleNumber;
+	string acctType;
+public:
+	// /////////////////CONSTRUCTOR(S)////////////////// //
+	Customer(string _name, string _address, unsigned int _age, unsigned int _teleNumber, string _acctType)
+	{
+		name = _name;
+		address = _address;
+		age = _age;
+		teleNumber = _teleNumber;
+		acctType = _acctType;
+	}
+	// //////////////////////////////////////////////// //
+
+	// /////////////////ACCESSOR FXNS ////////////////// //
+	const string gName() { return name; }
+	const string gAddress() { return address; }
+	const unsigned int gAge() { return age; }
+	const unsigned int gTele() { return teleNumber; }
+	const string gType() { return acctType; }
+	// ///////////////////////////////////////////////// //
+
+	// /////////////////MUTATOR FXNS//////////////////// //
+	void cName(string nName) { name = nName; }
+	void cAddress(string nAddress) { address = nAddress; }
+	void cAge(unsigned int nAge) { age = nAge; }
+	void cTele(unsigned int nTele) { teleNumber = nTele; }
+	void cType(string nType) { acctType = nType; }
+	// ///////////////////////////////////////////////// //
 
 };
 
